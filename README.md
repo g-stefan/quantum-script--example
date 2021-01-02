@@ -1,8 +1,10 @@
 # Quantum Script Extension Example
 
-Example;\
-Example.print(str);\
+```javascript
+Example;
+Example.print(str);
 Example.process(fn);
+```
 
 ## License
 
