@@ -5,6 +5,6 @@
 
 echo "-> clean quantum-script-extension-example"
 
-rm -rf bin
-rm -rf build
+rm -rf output
+rm -rf temp
 rm -rf lib

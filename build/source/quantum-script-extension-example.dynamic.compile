@@ -1,6 +1,6 @@
 --dll qse-example
 --project-base=quantum-script-extension-example
---source-is-separate
+--build-include
 --dll-no-version
 --use-project=quantum-script
 --install-dev
