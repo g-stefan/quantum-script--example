@@ -40,7 +40,7 @@ namespace Quantum {
 					} catch(const Error &e) {};
 
 
-					printf("%s", ((arguments->index(0))->getType()).value());
+					printf("%s", ((arguments->index(0))->getVariableType()).value());
 
 					return Context::getValueUndefined();
 				};
