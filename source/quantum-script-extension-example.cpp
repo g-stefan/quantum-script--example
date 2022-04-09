@@ -14,7 +14,7 @@
 #include "quantum-script-extension-example-license.hpp"
 #include "quantum-script-extension-example.hpp"
 #ifndef QUANTUM_SCRIPT_EXTENSION_EXAMPLE_NO_VERSION
-#include "quantum-script-extension-example-version.hpp"
+#	include "quantum-script-extension-example-version.hpp"
 #endif
 
 #include "quantum-script-variablestring.hpp"
@@ -37,8 +37,8 @@ namespace Quantum {
 					try {
 						printf("%s", ((arguments->index(0))->toString()).value());
 						return Context::getValueUndefined();
-					} catch(const Error &e) {};
-
+					} catch (const Error &e) {
+					};
 
 					printf("%s", ((arguments->index(0))->getVariableType()).value());
 
@@ -51,11 +51,8 @@ namespace Quantum {
 #endif
 
 					TPointer<VariableArray> applyArguments(VariableArray::newArray());
-					(applyArguments->index(0))=VariableString::newVariable("Hello");
-					return (arguments->index(0))->functionApply(
-							Context::getValueUndefined(),
-							applyArguments
-						);
+					(applyArguments->index(0)) = VariableString::newVariable("Hello");
+					return (arguments->index(0))->functionApply(Context::getValueUndefined(), applyArguments);
 				};
 
 				void registerInternalExtension(Executive *executive) {
@@ -89,4 +86,3 @@ extern "C" QUANTUM_SCRIPT_EXTENSION_EXAMPLE_EXPORT void quantumScriptExtension(Q
 	Quantum::Script::Extension::Example::initExecutive(executive, extensionId);
 };
 #endif
-
