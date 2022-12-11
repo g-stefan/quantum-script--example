@@ -1,6 +1,0 @@
---lib qse-example
---project-base=quantum-script-extension-example
---build-include
---use-project=quantum-script.static
---install-dev
---install-inc=quantum-script-extension
