@@ -14,29 +14,29 @@ namespace XYO::QuantumScript::Extension::Example {
 
 	static TPointer<Variable> print(VariableFunction *function, Variable *this_, VariableArray *arguments) {
 #ifdef QUANTUM_SCRIPT_VM_DEBUG_RUNTIME
-					printf("- example-print\n");
+		printf("- example-print\n");
 #endif
 
-					try {
-						printf("%s", ((arguments->index(0))->toString()).value());
-						return Context::getValueUndefined();
-					} catch (const Error &e) {
-					};
+		try {
+			printf("%s", ((arguments->index(0))->toString()).value());
+			return Context::getValueUndefined();
+		} catch (const Error &e) {
+		};
 
-					printf("%s", ((arguments->index(0))->getVariableType()).value());
+		printf("%s", ((arguments->index(0))->getVariableType()).value());
 
-					return Context::getValueUndefined();
-				};
+		return Context::getValueUndefined();
+	};
 
-				static TPointer<Variable> process(VariableFunction *function, Variable *this_, VariableArray *arguments) {
+	static TPointer<Variable> process(VariableFunction *function, Variable *this_, VariableArray *arguments) {
 #ifdef QUANTUM_SCRIPT_VM_DEBUG_RUNTIME
-					printf("- example-process\n");
+		printf("- example-process\n");
 #endif
 
-					TPointer<VariableArray> applyArguments(VariableArray::newArray());
-					(applyArguments->index(0)) = VariableString::newVariable("Hello");
-					return (arguments->index(0))->functionApply(Context::getValueUndefined(), applyArguments);
-				};
+		TPointer<VariableArray> applyArguments(VariableArray::newArray());
+		(applyArguments->index(0)) = VariableString::newVariable("Hello");
+		return (arguments->index(0))->functionApply(Context::getValueUndefined(), applyArguments);
+	};
 
 	void registerInternalExtension(Executive *executive) {
 		executive->registerInternalExtension("Example", initExecutive);
@@ -52,8 +52,8 @@ namespace XYO::QuantumScript::Extension::Example {
 		executive->setExtensionPublic(extensionId, true);
 
 		executive->compileStringX("var Example={};");
-					executive->setFunction2("Example.print(str)", print);
-					executive->setFunction2("Example.process(fn)", process);
+		executive->setFunction2("Example.print(str)", print);
+		executive->setFunction2("Example.process(fn)", process);
 	};
 
 };
