@@ -44,7 +44,7 @@ namespace XYO::QuantumScript::Extension::Example {
 
 	void initExecutive(Executive *executive, void *extensionId) {
 		String info = "Example\r\n";
-		info << License::shortLicense();
+		info << License::shortLicense().c_str();
 
 		executive->setExtensionName(extensionId, "Example");
 		executive->setExtensionInfo(extensionId, info);
