@@ -1,5 +1,6 @@
 {
 	"solution": {
+		"namespace" : "xyo",
 		"name" : "quantum-script--example",
 		"type" : "xyo-cpp",
 		"projects": [

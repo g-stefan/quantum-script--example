@@ -8,12 +8,11 @@
 #include <XYO/QuantumScript.Extension/Example/Copyright.hpp>
 #include <XYO/QuantumScript.Extension/Example/License.hpp>
 #include <XYO/QuantumScript.Extension/Example/Version.hpp>
-#include <XYO/QuantumScript.Extension/Buffer/VariableBuffer.hpp>
 
 namespace XYO::QuantumScript::Extension::Example {
 
 	static TPointer<Variable> print(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_VM_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- example-print\n");
 #endif
 
@@ -29,7 +28,7 @@ namespace XYO::QuantumScript::Extension::Example {
 	};
 
 	static TPointer<Variable> process(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_VM_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- example-process\n");
 #endif
 
